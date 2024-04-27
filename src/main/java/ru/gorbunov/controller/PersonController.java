@@ -15,12 +15,13 @@ import java.sql.SQLException;
 @WebServlet(name = "PersonController", urlPatterns = {"/person"})
 public class PersonController extends HttpServlet {
 
+    public static final String CONTENT_TYPE = "application/json";
     private final PersonService personService = new PersonServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
-        resp.setContentType("application/json");
+        resp.setContentType(CONTENT_TYPE);
 
         long personId;
         try {
