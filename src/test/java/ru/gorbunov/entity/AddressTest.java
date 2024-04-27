@@ -14,7 +14,7 @@ public class AddressTest {
                 "Street"
         );
 
-        assertNotNull(address.getId());
+        assertNotNull(address.getId()); // когда много ассертов, их надо запихивать в assertAll
         assertNotNull(address.getCity());
         assertNotNull(address.getStreet());
 
